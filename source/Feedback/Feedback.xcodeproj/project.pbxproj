@@ -20,7 +20,7 @@
 		10800D2816B1DD4C00C58A8A /* MainStoryboard_iPad.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 10800D2616B1DD4C00C58A8A /* MainStoryboard_iPad.storyboard */; };
 		10800D2B16B1DD4C00C58A8A /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 10800D2A16B1DD4C00C58A8A /* ViewController.m */; };
 		10800D3616B1E16D00C58A8A /* WindowsAzureMobileServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 10800D3516B1E16D00C58A8A /* WindowsAzureMobileServices.framework */; };
-		10800D3B16B1E1BD00C58A8A /* FeedbackService.m in Sources */ = {isa = PBXBuildFile; fileRef = 10800D3A16B1E1BD00C58A8A /* FeedbackService.m */; };
+		10800D3E16B1E47600C58A8A /* FeedbackService.m in Sources */ = {isa = PBXBuildFile; fileRef = 10800D3D16B1E47600C58A8A /* FeedbackService.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -42,8 +42,8 @@
 		10800D2916B1DD4C00C58A8A /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
 		10800D2A16B1DD4C00C58A8A /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		10800D3516B1E16D00C58A8A /* WindowsAzureMobileServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = WindowsAzureMobileServices.framework; sourceTree = "<group>"; };
-		10800D3916B1E1BD00C58A8A /* FeedbackService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FeedbackService.h; path = MSFeedback/FeedbackService.h; sourceTree = "<group>"; };
-		10800D3A16B1E1BD00C58A8A /* FeedbackService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FeedbackService.m; path = MSFeedback/FeedbackService.m; sourceTree = "<group>"; };
+		10800D3C16B1E47600C58A8A /* FeedbackService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FeedbackService.h; sourceTree = "<group>"; };
+		10800D3D16B1E47600C58A8A /* FeedbackService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FeedbackService.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -92,7 +92,6 @@
 		10800D1116B1DD4C00C58A8A /* Feedback */ = {
 			isa = PBXGroup;
 			children = (
-				10800D3816B1E18200C58A8A /* MSFeedback */,
 				10800D1A16B1DD4C00C58A8A /* AppDelegate.h */,
 				10800D1B16B1DD4C00C58A8A /* AppDelegate.m */,
 				10800D2316B1DD4C00C58A8A /* MainStoryboard_iPhone.storyboard */,
@@ -100,6 +99,8 @@
 				10800D2916B1DD4C00C58A8A /* ViewController.h */,
 				10800D2A16B1DD4C00C58A8A /* ViewController.m */,
 				10800D1216B1DD4C00C58A8A /* Supporting Files */,
+				10800D3C16B1E47600C58A8A /* FeedbackService.h */,
+				10800D3D16B1E47600C58A8A /* FeedbackService.m */,
 			);
 			path = Feedback;
 			sourceTree = "<group>";
@@ -116,15 +117,6 @@
 				10800D2116B1DD4C00C58A8A /* Default-568h@2x.png */,
 			);
 			name = "Supporting Files";
-			sourceTree = "<group>";
-		};
-		10800D3816B1E18200C58A8A /* MSFeedback */ = {
-			isa = PBXGroup;
-			children = (
-				10800D3916B1E1BD00C58A8A /* FeedbackService.h */,
-				10800D3A16B1E1BD00C58A8A /* FeedbackService.m */,
-			);
-			name = MSFeedback;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -197,7 +189,7 @@
 				10800D1816B1DD4C00C58A8A /* main.m in Sources */,
 				10800D1C16B1DD4C00C58A8A /* AppDelegate.m in Sources */,
 				10800D2B16B1DD4C00C58A8A /* ViewController.m in Sources */,
-				10800D3B16B1E1BD00C58A8A /* FeedbackService.m in Sources */,
+				10800D3E16B1E47600C58A8A /* FeedbackService.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
