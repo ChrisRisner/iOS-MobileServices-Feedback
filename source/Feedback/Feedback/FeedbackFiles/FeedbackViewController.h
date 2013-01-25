@@ -11,6 +11,7 @@
 @interface FeedbackViewController : UIViewController <UITextViewDelegate, UITextFieldDelegate> {
     @private
     int maxCharacters;
+    int rating;
 }
 
 - (id)initWithMaxCharacters:(int)maximumChars;
@@ -30,6 +31,7 @@
 @property (weak, nonatomic) IBOutlet UIButton *btnStarFour;
 @property (weak, nonatomic) IBOutlet UIButton *btnStarFive;
 @property (weak, nonatomic) IBOutlet UIScrollView *svScrollView;
+- (IBAction)tappedSubmit:(id)sender;
 
 
 @end

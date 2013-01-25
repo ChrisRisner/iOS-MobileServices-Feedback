@@ -115,8 +115,6 @@
 				10800D2916B1DD4C00C58A8A /* ViewController.h */,
 				10800D2A16B1DD4C00C58A8A /* ViewController.m */,
 				10800D1216B1DD4C00C58A8A /* Supporting Files */,
-				10800D3C16B1E47600C58A8A /* FeedbackService.h */,
-				10800D3D16B1E47600C58A8A /* FeedbackService.m */,
 			);
 			path = Feedback;
 			sourceTree = "<group>";
@@ -138,6 +136,8 @@
 		10800D3F16B1EEF300C58A8A /* MSFeedback */ = {
 			isa = PBXGroup;
 			children = (
+				10800D3C16B1E47600C58A8A /* FeedbackService.h */,
+				10800D3D16B1E47600C58A8A /* FeedbackService.m */,
 				10800DBD16B32AC500C58A8A /* SelectedStar.png */,
 				10800DBE16B32AC500C58A8A /* UnselectedStar.png */,
 				10800D4016B1F2A900C58A8A /* FeedbackView_iPhone.xib */,

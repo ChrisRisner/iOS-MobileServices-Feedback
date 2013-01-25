@@ -8,6 +8,7 @@
 
 #import "FeedbackViewController.h"
 #import <QuartzCore/QuartzCore.h>
+#import "FeedbackService.h"
 
 @interface FeedbackViewController ()
 
@@ -46,6 +47,7 @@
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
 
+    rating = -1;
     self.txtComments.layer.cornerRadius = 5.0f;
     self.txtComments.layer.borderWidth = 2.0f;
     self.txtComments.layer.borderColor = [[UIColor grayColor] CGColor];
@@ -111,6 +113,7 @@
 }
 
 -(void) setRatingWithStars:(int)starCount {
+    rating = starCount;
     //Dismiss the keyboard just in case it's showing
     [self dismissKeyboard];
     UIImage *selectedStarImage = [UIImage imageNamed:@"SelectedStar.png"];
@@ -156,8 +159,6 @@
 
 - (void)textFieldDidBeginEditing:(UITextField *)textField {
     if (self.svScrollView) {
-//        [self.svScrollView scrollRectToVisible:textField.frame animated:YES];
-        
         CGRect rectBottom = CGRectZero;
         rectBottom.size = self.svScrollView.frame.size;
         rectBottom.origin.y = self.svScrollView.contentSize.height - rectBottom.size.height;
@@ -165,5 +166,52 @@
         
         [self.svScrollView scrollRectToVisible:rectBottom animated:YES];
     }
+}
+- (IBAction)tappedSubmit:(id)sender {
+    //Do any validation of data you want here
+    
+    
+    
+    NSDictionary *record;
+    if (rating > 0) {
+        record =
+            @{ @"comments" : self.txtComments.text
+             , @"email" : self.txtEmailAddress.text
+             , @"rating" : @(rating)};
+    } else {
+        record =
+        @{ @"comments" : self.txtComments.text
+        , @"email" : self.txtEmailAddress.text};
+    }
+    FeedbackService *feedbackService = [FeedbackService getInstance];
+    [feedbackService saveFeedback:record completion:^{
+        //Decide what you want to do here
+        if ([self isModal]) {
+            [self dismissViewControllerAnimated:YES completion:nil];
+        }
+    }];
+}
+
+-(BOOL)isModal {
+    
+    BOOL isModal = ((self.parentViewController && self.parentViewController.modalViewController == self) ||
+                    //or if I have a navigation controller, check if its parent modal view controller is self navigation controller
+                    ( self.navigationController && self.navigationController.parentViewController && self.navigationController.parentViewController.modalViewController == self.navigationController) ||
+                    //or if the parent of my UITabBarController is also a UITabBarController class, then there is no way to do that, except by using a modal presentation
+                    [[[self tabBarController] parentViewController] isKindOfClass:[UITabBarController class]]);
+    
+    //iOS 5+
+    if (!isModal && [self respondsToSelector:@selector(presentingViewController)]) {
+        
+        isModal = ((self.presentingViewController && self.presentingViewController.modalViewController == self) ||
+                   //or if I have a navigation controller, check if its parent modal view controller is self navigation controller
+                   (self.navigationController && self.navigationController.presentingViewController && self.navigationController.presentingViewController.modalViewController == self.navigationController) ||
+                   //or if the parent of my UITabBarController is also a UITabBarController class, then there is no way to do that, except by using a modal presentation
+                   [[[self tabBarController] presentingViewController] isKindOfClass:[UITabBarController class]]);
+        
+    }
+    
+    return isModal;        
+    
 }
 @end
