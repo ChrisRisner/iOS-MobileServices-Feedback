@@ -46,12 +46,13 @@
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
-
     rating = -1;
+    //Add a border around the comments text view
     self.txtComments.layer.cornerRadius = 5.0f;
     self.txtComments.layer.borderWidth = 2.0f;
     self.txtComments.layer.borderColor = [[UIColor grayColor] CGColor];
     
+    //Handle if a max amount of characters has been specified
     if (maxCharacters > 0) {
         self.lblCharsRemaining.text = [NSString stringWithFormat:@"%i characters remaining", maxCharacters];
     } else {
@@ -73,9 +74,10 @@
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
 }
 
+//Check to see if the text length (if one has been set) won't be exceeded
+//with this edit
 - (BOOL) textView:(UITextView *)textView shouldChangeTextInRange:(NSRange)range replacementText:(NSString *)text {
     if (maxCharacters > 0) {
         int currentChars = [self.txtComments.text length];
@@ -92,6 +94,7 @@
     }
 }
 
+//Star button handlers
 - (IBAction)tappedStarOne:(id)sender {
     [self setRatingWithStars:1];
 }
@@ -112,6 +115,7 @@
     [self setRatingWithStars:5];
 }
 
+//Handle setting star images
 -(void) setRatingWithStars:(int)starCount {
     rating = starCount;
     //Dismiss the keyboard just in case it's showing
@@ -152,11 +156,13 @@
     }
 }
 
+//Close the keyboard when they hit enter in the text field
 - (BOOL) textFieldShouldReturn:(UITextField *)textField {
     [textField resignFirstResponder];
     return YES;
 }
 
+//Scroll to the text field when it is entered
 - (void)textFieldDidBeginEditing:(UITextField *)textField {
     if (self.svScrollView) {
         CGRect rectBottom = CGRectZero;
@@ -170,14 +176,8 @@
 - (IBAction)tappedSubmit:(id)sender {
     //Do any validation of data you want here
     
-    //Activity indicators
-//    self.activityIndicator = [[UIActivityIndicatorView alloc]initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleGray];
-//	self.activityIndicator.frame = CGRectMake(0.0, 0.0, 40.0, 40.0);
-//	self.activityIndicator.center = self.view.center;
-//	[self.view addSubview: self.activityIndicator];
-//    [UIApplication sharedApplication].networkActivityIndicatorVisible = YES;
 	[self.activityIndicator startAnimating];
-    
+    //Creat the record with the rating if it was selected
     NSDictionary *record;
     if (rating > 0) {
         record =
@@ -193,13 +193,17 @@
     [feedbackService saveFeedback:record completion:^{
         [self.activityIndicator stopAnimating];
         [UIApplication sharedApplication].networkActivityIndicatorVisible = NO;
-        //Decide what you want to do here
+        //If we're in a modal, dismiss that
         if ([self isModal]) {
             [self dismissViewControllerAnimated:YES completion:nil];
+        } else {
+        //Otherwise pop it off the navigation stack
+            [self.navigationController popViewControllerAnimated:YES];
         }
     }];
 }
 
+//Check to see if we're in a modal
 -(BOOL)isModal {
     
     BOOL isModal = ((self.parentViewController && self.parentViewController.modalViewController == self) ||
@@ -218,8 +222,6 @@
                    [[[self tabBarController] presentingViewController] isKindOfClass:[UITabBarController class]]);
         
     }
-    
-    return isModal;        
-    
+    return isModal;
 }
 @end

@@ -12,12 +12,10 @@
 #pragma mark * Block Definitions
 typedef void (^CompletionBlock) ();
 typedef void (^CompletionWithIndexBlock) (NSUInteger index);
-typedef void (^BusyUpdateBlock) (BOOL busy);
 
 @interface FeedbackService : NSObject<MSFilter>
 
 @property (nonatomic, strong)   MSClient *client;
-@property (nonatomic, copy)     BusyUpdateBlock busyUpdate;
 
 +(FeedbackService*) getInstance;
 

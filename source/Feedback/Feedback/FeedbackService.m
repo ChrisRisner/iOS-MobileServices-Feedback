@@ -48,25 +48,6 @@ static FeedbackService *singletonInstance;
     }];
 }
 
-
-- (void) busy:(BOOL) busy
-{
-    // assumes always executes on UI thread
-    if (busy) {
-        if (self.busyCount == 0 && self.busyUpdate != nil) {
-            self.busyUpdate(YES);
-        }
-        self.busyCount ++;
-    }
-    else
-    {
-        if (self.busyCount == 1 && self.busyUpdate != nil) {
-            self.busyUpdate(FALSE);
-        }
-        self.busyCount--;
-    }
-}
-
 - (void) logErrorIfNotNil:(NSError *) error
 {
     if (error) {
@@ -81,14 +62,11 @@ static FeedbackService *singletonInstance;
                 onNext:(MSFilterNextBlock)onNext
             onResponse:(MSFilterResponseBlock)onResponse
 {
-    // A wrapped response block that decrements the busy counter
+    // A wrapped response block
     MSFilterResponseBlock wrappedResponse = ^(NSHTTPURLResponse *response, NSData *data, NSError *error) {
-        [self busy:NO];
         onResponse(response, data, error);
     };
     
-    // Increment the busy counter before sending the request
-    [self busy:YES];
     onNext(request, wrappedResponse);
 }
 
