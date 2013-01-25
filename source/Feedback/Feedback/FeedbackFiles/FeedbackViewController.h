@@ -32,6 +32,7 @@
 @property (weak, nonatomic) IBOutlet UIButton *btnStarFive;
 @property (weak, nonatomic) IBOutlet UIScrollView *svScrollView;
 - (IBAction)tappedSubmit:(id)sender;
+@property (weak, nonatomic) IBOutlet UIActivityIndicatorView *activityIndicator;
 
 
 @end

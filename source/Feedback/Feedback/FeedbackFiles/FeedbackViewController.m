@@ -170,7 +170,13 @@
 - (IBAction)tappedSubmit:(id)sender {
     //Do any validation of data you want here
     
-    
+    //Activity indicators
+//    self.activityIndicator = [[UIActivityIndicatorView alloc]initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleGray];
+//	self.activityIndicator.frame = CGRectMake(0.0, 0.0, 40.0, 40.0);
+//	self.activityIndicator.center = self.view.center;
+//	[self.view addSubview: self.activityIndicator];
+//    [UIApplication sharedApplication].networkActivityIndicatorVisible = YES;
+	[self.activityIndicator startAnimating];
     
     NSDictionary *record;
     if (rating > 0) {
@@ -185,6 +191,8 @@
     }
     FeedbackService *feedbackService = [FeedbackService getInstance];
     [feedbackService saveFeedback:record completion:^{
+        [self.activityIndicator stopAnimating];
+        [UIApplication sharedApplication].networkActivityIndicatorVisible = NO;
         //Decide what you want to do here
         if ([self isModal]) {
             [self dismissViewControllerAnimated:YES completion:nil];
