@@ -21,6 +21,8 @@
 		10800D2B16B1DD4C00C58A8A /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 10800D2A16B1DD4C00C58A8A /* ViewController.m */; };
 		10800D3616B1E16D00C58A8A /* WindowsAzureMobileServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 10800D3516B1E16D00C58A8A /* WindowsAzureMobileServices.framework */; };
 		10800D3E16B1E47600C58A8A /* FeedbackService.m in Sources */ = {isa = PBXBuildFile; fileRef = 10800D3D16B1E47600C58A8A /* FeedbackService.m */; };
+		10800D4116B1F2A900C58A8A /* FeedbackView_iPhone.xib in Resources */ = {isa = PBXBuildFile; fileRef = 10800D4016B1F2A900C58A8A /* FeedbackView_iPhone.xib */; };
+		10800D4316B1F2B900C58A8A /* FeedbackView_iPad.xib in Resources */ = {isa = PBXBuildFile; fileRef = 10800D4216B1F2B900C58A8A /* FeedbackView_iPad.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -44,6 +46,8 @@
 		10800D3516B1E16D00C58A8A /* WindowsAzureMobileServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = WindowsAzureMobileServices.framework; sourceTree = "<group>"; };
 		10800D3C16B1E47600C58A8A /* FeedbackService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FeedbackService.h; sourceTree = "<group>"; };
 		10800D3D16B1E47600C58A8A /* FeedbackService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FeedbackService.m; sourceTree = "<group>"; };
+		10800D4016B1F2A900C58A8A /* FeedbackView_iPhone.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FeedbackView_iPhone.xib; sourceTree = "<group>"; };
+		10800D4216B1F2B900C58A8A /* FeedbackView_iPad.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FeedbackView_iPad.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -92,6 +96,7 @@
 		10800D1116B1DD4C00C58A8A /* Feedback */ = {
 			isa = PBXGroup;
 			children = (
+				10800D3F16B1EEF300C58A8A /* MSFeedback */,
 				10800D1A16B1DD4C00C58A8A /* AppDelegate.h */,
 				10800D1B16B1DD4C00C58A8A /* AppDelegate.m */,
 				10800D2316B1DD4C00C58A8A /* MainStoryboard_iPhone.storyboard */,
@@ -117,6 +122,15 @@
 				10800D2116B1DD4C00C58A8A /* Default-568h@2x.png */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		10800D3F16B1EEF300C58A8A /* MSFeedback */ = {
+			isa = PBXGroup;
+			children = (
+				10800D4016B1F2A900C58A8A /* FeedbackView_iPhone.xib */,
+				10800D4216B1F2B900C58A8A /* FeedbackView_iPad.xib */,
+			);
+			name = MSFeedback;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -176,6 +190,8 @@
 				10800D2216B1DD4C00C58A8A /* Default-568h@2x.png in Resources */,
 				10800D2516B1DD4C00C58A8A /* MainStoryboard_iPhone.storyboard in Resources */,
 				10800D2816B1DD4C00C58A8A /* MainStoryboard_iPad.storyboard in Resources */,
+				10800D4116B1F2A900C58A8A /* FeedbackView_iPhone.xib in Resources */,
+				10800D4316B1F2B900C58A8A /* FeedbackView_iPad.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
