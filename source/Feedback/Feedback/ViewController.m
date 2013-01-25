@@ -7,6 +7,9 @@
 //
 
 #import "ViewController.h"
+#import "FeedbackViewController.h"
+#import <QuartzCore/QuartzCore.h>
+
 
 @interface ViewController ()
 
@@ -18,6 +21,8 @@
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
+    
+
 }
 
 - (void)didReceiveMemoryWarning
@@ -26,4 +31,15 @@
     // Dispose of any resources that can be recreated.
 }
 
+- (IBAction)tappedSendFeedback:(id)sender {
+    //Normal instantiator
+//    UINavigationController *controller = [[FeedbackViewController alloc] init];
+    //Character limit
+    UINavigationController *controller = [[FeedbackViewController alloc] initWithMaxCharacters:1000];
+    
+    
+    
+    
+    [self presentViewController:controller animated:YES completion:nil];
+}
 @end

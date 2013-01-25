@@ -23,6 +23,8 @@
 		10800D3E16B1E47600C58A8A /* FeedbackService.m in Sources */ = {isa = PBXBuildFile; fileRef = 10800D3D16B1E47600C58A8A /* FeedbackService.m */; };
 		10800D4116B1F2A900C58A8A /* FeedbackView_iPhone.xib in Resources */ = {isa = PBXBuildFile; fileRef = 10800D4016B1F2A900C58A8A /* FeedbackView_iPhone.xib */; };
 		10800D4316B1F2B900C58A8A /* FeedbackView_iPad.xib in Resources */ = {isa = PBXBuildFile; fileRef = 10800D4216B1F2B900C58A8A /* FeedbackView_iPad.xib */; };
+		10800DB216B2F7F300C58A8A /* FeedbackViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 10800DB116B2F7F300C58A8A /* FeedbackViewController.m */; };
+		10800DB816B2FC7E00C58A8A /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 10800DB716B2FC7E00C58A8A /* QuartzCore.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -48,6 +50,9 @@
 		10800D3D16B1E47600C58A8A /* FeedbackService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FeedbackService.m; sourceTree = "<group>"; };
 		10800D4016B1F2A900C58A8A /* FeedbackView_iPhone.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FeedbackView_iPhone.xib; sourceTree = "<group>"; };
 		10800D4216B1F2B900C58A8A /* FeedbackView_iPad.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FeedbackView_iPad.xib; sourceTree = "<group>"; };
+		10800DB016B2F7F300C58A8A /* FeedbackViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FeedbackViewController.h; path = FeedbackFiles/FeedbackViewController.h; sourceTree = "<group>"; };
+		10800DB116B2F7F300C58A8A /* FeedbackViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FeedbackViewController.m; path = FeedbackFiles/FeedbackViewController.m; sourceTree = "<group>"; };
+		10800DB716B2FC7E00C58A8A /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -55,6 +60,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				10800DB816B2FC7E00C58A8A /* QuartzCore.framework in Frameworks */,
 				10800D0C16B1DD4C00C58A8A /* UIKit.framework in Frameworks */,
 				10800D0E16B1DD4C00C58A8A /* Foundation.framework in Frameworks */,
 				10800D1016B1DD4C00C58A8A /* CoreGraphics.framework in Frameworks */,
@@ -85,6 +91,7 @@
 		10800D0A16B1DD4C00C58A8A /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				10800DB716B2FC7E00C58A8A /* QuartzCore.framework */,
 				10800D3516B1E16D00C58A8A /* WindowsAzureMobileServices.framework */,
 				10800D0B16B1DD4C00C58A8A /* UIKit.framework */,
 				10800D0D16B1DD4C00C58A8A /* Foundation.framework */,
@@ -129,6 +136,8 @@
 			children = (
 				10800D4016B1F2A900C58A8A /* FeedbackView_iPhone.xib */,
 				10800D4216B1F2B900C58A8A /* FeedbackView_iPad.xib */,
+				10800DB016B2F7F300C58A8A /* FeedbackViewController.h */,
+				10800DB116B2F7F300C58A8A /* FeedbackViewController.m */,
 			);
 			name = MSFeedback;
 			sourceTree = "<group>";
@@ -206,6 +215,7 @@
 				10800D1C16B1DD4C00C58A8A /* AppDelegate.m in Sources */,
 				10800D2B16B1DD4C00C58A8A /* ViewController.m in Sources */,
 				10800D3E16B1E47600C58A8A /* FeedbackService.m in Sources */,
+				10800DB216B2F7F300C58A8A /* FeedbackViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

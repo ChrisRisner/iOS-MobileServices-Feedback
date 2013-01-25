@@ -24,11 +24,14 @@
                                 <state key="highlighted">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="tappedSendFeedback:" destination="2" eventType="touchUpInside" id="BVi-o8-dtQ"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="XID-A2-u8W" firstAttribute="centerX" secondItem="3" secondAttribute="centerX" type="default" id="Tdn-0R-s0U"/>
+                            <constraint firstItem="XID-A2-u8W" firstAttribute="centerX" secondItem="3" secondAttribute="centerX" type="default" id="94y-wH-haz"/>
                             <constraint firstItem="XID-A2-u8W" firstAttribute="top" secondItem="3" secondAttribute="top" constant="252" id="gHt-6f-RYB"/>
                         </constraints>
                     </view>
