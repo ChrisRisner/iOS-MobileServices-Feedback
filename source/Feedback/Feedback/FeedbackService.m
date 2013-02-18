@@ -27,8 +27,8 @@ static FeedbackService *singletonInstance;
 
 -(FeedbackService *) init {
     // Initialize the Mobile Service client with your URL and key
-    MSClient *newClient = [MSClient clientWithApplicationURLString:@"https://feedbackservice.azure-mobile.net/"
-            withApplicationKey:@"cWtFlOoaOADYmOlIWEfUoQBrESUAtA52"];
+    MSClient *newClient = [MSClient clientWithApplicationURLString:@"https://<YourMobileServiceUrl>.azure-mobile.net/"
+            withApplicationKey:@"<YourApplicationKey>"];
     
     // Add a Mobile Service filter to enable the busy indicator
     self.client = [newClient clientwithFilter:self];
