@@ -9,7 +9,8 @@ Below you will find requirements and deployment instructions.
 * Windows Azure Account - Needed to create and run the Mobile Service.  [Sign up for a free trial](https://www.windowsazure.com/en-us/pricing/free-trial/).
 
 ## Source Code Folders
-* /source/Feedback - This contains code for the application with Mobile Services and requires client side changes noted below.
+* /source/start - This contains code for the application prior to adding in Mobile Services.
+* /source/end - This contains code for the application with Mobile Services and requires client side changes noted below.
 
 ## Additional Resources
 
