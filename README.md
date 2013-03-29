@@ -20,7 +20,7 @@ A blog post has gone up talking about this Feedback sample as well as how to con
 After creating your Mobile Service in the Windows Azure Portal, you'll need to create a table named "Feedback".
 
 #Client Application Changes
-In order to run the client applicaiton, you'll need to change a few settings in your application.  After opening the source code in Xcode, open the FeedbackService.m file.  Find the init method and change the <YourMobileServiceUrl> and <YourApplicationKey> to match the values from the Mobile Service you've created.
+In order to run the client applicaiton, you'll need to change a few settings in your application.  After opening the source code in Xcode, open the FeedbackService.m file.  Find the init method and change the \<YourMobileServiceUrl> and \<YourApplicationKey> to match the values from the Mobile Service you've created.
 
 ## Contact
 
