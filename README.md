@@ -1,3 +1,9 @@
+---
+services:
+platforms:
+author: azure
+---
+
 ﻿# iOS - Mobile Services - Feedback
 This is a feedback sample which makes use of Windows Azure Mobile Services for it's data storage.  It can be used as a feedback form inside of an application.  It can also be easily added to an existing iOS project.  This sample was built using XCode, the iOS Framework, and the iOS Mobile Services SDK.
 
